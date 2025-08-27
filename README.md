@@ -1,4 +1,6 @@
 This project is a simple shopping website built using HTML, CSS, and JavaScript. It demonstrates navigation, interactivity, and basic e-commerce features like product viewing and adding items to a cart.
+
+
 Features
 
 ->Home Page
