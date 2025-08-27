@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    .login-box {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      padding: 30px 40px;
+      width: 350px;
+      margin: auto;
+      margin-top: 100px;
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #fff;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+    }
+
+    .login-box label {
+      font-weight: bold;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .login-box .remember {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .login-box .remember input {
+      margin-left: 5px;
+    }
+
+    .login-box .remember a {
+      color: lightblue;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .login-box .remember a:hover {
+      text-decoration: underline;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .login-box button:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+    }
+
+    .login-box p {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .login-box p a {
+      color: lightblue;
+      text-decoration: none;
+    }
+
+    .login-box p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="https://v1.pinimg.com/videos/iht/expMp4/db/4f/cf/db4fcf677cced7c85d1937df5586693f_720w.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm" autocomplete="off">
+      <input type="text" id="username" placeholder="Username" required autocomplete="off" />
+      <input type="password" id="password" placeholder="Password" required autocomplete="new-password" />
+      <div class="remember">
+        <label>Remember me <input type="checkbox" /></label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit" id="loginBtn" disabled>Login</button>
+     <p>Don't have an account? <a href="register.html">Register</a></p>
+
+    </form>
+  </div>
+
+  <script>
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const loginBtn = document.getElementById("loginBtn");
+    const loginForm = document.getElementById("loginForm");
+
+    function toggleButton() {
+      loginBtn.disabled =
+        usernameInput.value.trim() === "" || passwordInput.value.trim() === "";
+    }
+
+    usernameInput.addEventListener("input", toggleButton);
+    passwordInput.addEventListener("input", toggleButton);
+
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault(); 
+
+      if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+        window.location.href = "file:///D:/New%20folder/Bestpro/index.html";
+      }
+    });
+  </script>
+</body>
+</html>
